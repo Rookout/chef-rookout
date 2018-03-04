@@ -13,14 +13,15 @@ remote_file '/tmp/rookout_setup.sh' do
     action :create
   end
   
-  #Start the agent 
-  service 'rookout-agent' do
-    action :nothing
-  end
   
   #Install the agent as a service daemon
   execute 'install rookout agent' do
     user 'root'
     command "sudo /tmp/rookout_setup.sh agent --token=#{node['rookout']['agent_token']}"
-    notifies :start, 'service[rookout-agent]', :immediately
   end 
+
+    #Start the agent 
+service 'rookout_agent' do
+  supports :status => true, :restart => true, :reload => true
+  action [ :enable, :start ]
+end
