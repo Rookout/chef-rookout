@@ -17,7 +17,7 @@ knife cookbook upload rookout
 ```
 4. Add the rookout-agent recipe to run_list:
 ```ruby
-run_list 'foo::bar', 'rookout::default'
+run_list 'foo::bar', 'chef-rookout-agent::default'
 ```
 5. Go to https://app.rookout.com and start debugging :) 
 

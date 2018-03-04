@@ -21,6 +21,6 @@ remote_file '/tmp/rookout_setup.sh' do
   #Install the agent as a service daemon
   execute 'install rookout agent' do
     user 'root'
-    command 'sudo /tmp/rookout_setup.sh agent --token=#{node['rookout']['agent_token']}'
+    command "sudo /tmp/rookout_setup.sh agent --token=#{node['rookout']['agent_token']}"
     notifies :start, 'service[rookout-agent]', :immediately
   end 
