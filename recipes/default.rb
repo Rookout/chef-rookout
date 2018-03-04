@@ -21,7 +21,7 @@ remote_file '/tmp/rookout_setup.sh' do
   end 
 
     #Start the agent 
-service 'rookout_agent' do
+service 'rookout-agent' do
   supports :status => true, :restart => true, :reload => true
   action [ :enable, :start ]
 end
