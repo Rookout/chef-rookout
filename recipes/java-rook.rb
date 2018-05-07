@@ -1,5 +1,5 @@
 #
-# Cookbook:: chef-rookout-agent
+# Cookbook:: chef-rookout
 # Spec:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
