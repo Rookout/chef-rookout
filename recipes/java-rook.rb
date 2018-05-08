@@ -9,8 +9,8 @@ directory "#{node['rookout']['java_rook_path']}" do
   owner 'root'
   group 'root'
   mode '0755'
-  recursive 'true'
   action :create
+  recursive true
 end
 
 remote_file "#{node['rookout']['java_rook_path']}/rook.jar" do
