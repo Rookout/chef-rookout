@@ -27,7 +27,10 @@ remote_file '/tmp/rookout_setup.sh' do
     content "{
       \"LoginInformation\": {
           \"TOKEN\": \"#{node['rookout']['agent_token']}\"
-        }
+        },
+      \"HttpRetries\": {
+        \"TOTAL\": 10
+       }
       }"
     mode '0644'
   end
