@@ -18,19 +18,9 @@ remote_file '/tmp/rookout_setup.sh' do
   #Install the agent as a service daemon
   execute 'install rookout agent' do
     user 'root'
-    command "sudo /tmp/rookout_setup.sh agent"
+    command "sudo /tmp/rookout_setup.sh agent --token=#{node['rookout']['agent_token']}"
   end 
   
-
-  #Install the config file
-  file '/etc/rookout/agent-config.json' do
-    content "{
-      \"LoginInformation\": {
-          \"TOKEN\": \"#{node['rookout']['agent_token']}\"
-        }
-      }"
-    mode '0644'
-  end
 
 #Start the agent 
 service 'rookout-agent' do
