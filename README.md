@@ -31,7 +31,7 @@ run_list 'foo::bar', 'chef-rookout::java-rook'
 ```
 4. Set your JVM to use the rook as a java agent :
 ```bash
-$ export JAVA_OPTIONS="$JAVA_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
+$ export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -javaagent:{DOWNLOAD_DIR}/rook.jar"
 ```
 
 Go to https://app.rookout.com and start debugging :) 
